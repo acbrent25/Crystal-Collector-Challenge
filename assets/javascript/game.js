@@ -25,7 +25,7 @@ $(document).ready(function() {
              reset();
 
         // Generate Random Number for Target Number
-        targetNumber = Math.floor(Math.random() * 100) + 25 ;
+        targetNumber = Math.floor(Math.random() * 120) + 19 ;
             
             targetNumber = parseInt(targetNumber);
             console.log(targetNumber);
@@ -40,7 +40,7 @@ $(document).ready(function() {
             // Each crystal gets a random value 
 
                 for (var i = 1; i < 5; i++) {
-                    crystalVal = [Math.floor(Math.random() * 10) + 1] ;
+                    crystalVal = [Math.floor(Math.random() * 12) + 1] ;
                     console.log("crystalVal = " + crystalVal);
 
                     // Push random CrystalVal into Crystal Vals array
