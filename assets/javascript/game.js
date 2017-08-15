@@ -2,13 +2,10 @@
 
 var wins = 0;
 var losses = 0;
-
 var targetNumber = 0;
 var yourScore = 0;
-
 var crystalVals;
 var crystalVal;
-
 var crystalOne;
 var crystalTwo;
 var crystalThree;
@@ -124,35 +121,3 @@ $(document).ready(function() {
     startGame();
 
 }); //. Document Ready
-
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-// Each time a crystal is clicked it add that value to the score
-
-
-// Player must match the score to the target number
-
-
-// If score is under target continue game
-
-
-// If score equals target add 1 to wins and reset score to 0 and generate new target number and new crystal values
-
-
-// If score exceeds target add 1 to losses and reset score to 0 and generate new target number and new crystal values
