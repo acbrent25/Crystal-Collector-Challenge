@@ -9,7 +9,8 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Titillium Web', sans-serif;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
-	text-rendering: optimizelegibility;
+    text-rendering: optimizelegibility;
+    word-break: keep-all ;
 }
 
 

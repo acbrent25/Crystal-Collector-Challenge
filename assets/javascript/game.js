@@ -6,7 +6,7 @@ var losses = 0;
 var targetNumber = 0;
 var yourScore = 0;
 
-var crystalVals = [];
+var crystalVals;
 var crystalVal;
 
 var crystalOne;
@@ -17,11 +17,12 @@ var crystalFour;
 
 
 $(document).ready(function() { 
+   
 
         // Generate random target number on page load and print to target
-        function startGame() {
-
-         yourScore = 0;      
+    function startGame() {
+            
+             reset();
 
         // Generate Random Number for Target Number
         targetNumber = Math.floor(Math.random() * 100) + 25 ;
@@ -48,65 +49,75 @@ $(document).ready(function() {
 
                 }
 
-
-                        // When Clicking Crystal One Assign Value of CrysalVals[0]
-                        $(".crystal1").on("click", function() {
-                            
-                            crystalOne = parseInt(crystalVals[0]);
-                            yourScore += crystalOne;
-                            console.log("yourScore = " + yourScore);
-                            $("#your-score").text(yourScore);
-                            winLoss();
-
-                        });
-
-                        $(".crystal2").on("click", function() {
-                            
-                            crystalTwo = parseInt(crystalVals[1]);
-                            yourScore += crystalTwo;
-                            console.log("yourScore = " + yourScore);
-                            $("#your-score").text(yourScore);
-                            winLoss();
-                        });
-
-                        $(".crystal3").on("click", function() {
-                            
-                            crystalThree = parseInt(crystalVals[2]);
-                            yourScore += crystalThree;
-                            console.log("yourScore = " + yourScore);
-                            $("#your-score").text(yourScore);
-                            winLoss();
-
-                        });
-
-                        $(".crystal4").on("click", function() {
-                            
-                            crystalFour = parseInt(crystalVals[3]);
-                            yourScore += crystalFour;
-                            console.log("yourScore = " + yourScore);
-                            $("#your-score").text(yourScore);
-                            winLoss();
-
-                        });
+    } //. Start Game Function 
 
 
-                        function winLoss() {
-                        if (yourScore === targetNumber) {
-                            wins++
-                            $("#win-ct").text(wins);
-                            startGame();
-                        }
+                // When Clicking Crystal One Assign Value of CrysalVals[0]
+                $(".crystal1").on("click", function() {
+                    
+                    crystalOne = parseInt(crystalVals[0]);
+                    yourScore += crystalOne;
+                    console.log("crystalOne = " + crystalOne);
+                    console.log("yourScore = " + yourScore);
+                    $("#your-score").text(yourScore);
+                    winLoss();
 
-                        if (yourScore > targetNumber) {
-                            losses++
-                            $("#loss-ct").text(losses);
-                            startGame();
+                });
 
-                        }  
-                        }  
+                
+
+                $(".crystal2").on("click", function() {
+                    
+                    crystalTwo = parseInt(crystalVals[1]);
+                    yourScore += crystalTwo;
+                    console.log("yourScore = " + yourScore);
+                    $("#your-score").text(yourScore);
+                    winLoss();
+                });
+
+                $(".crystal3").on("click", function() {
+                    
+                    crystalThree = parseInt(crystalVals[2]);
+                    yourScore += crystalThree;
+                    console.log("yourScore = " + yourScore);
+                    $("#your-score").text(yourScore);
+                    winLoss();
+
+                });
+
+                $(".crystal4").on("click", function() {
+                    
+                    crystalFour = parseInt(crystalVals[3]);
+                    yourScore += crystalFour;
+                    console.log("yourScore = " + yourScore);
+                    $("#your-score").text(yourScore);
+                    winLoss();
+
+                });
+
+                 // Reset score and crystals   
+                function reset() {
+                    yourScore = 0; 
+                    crystalVals = [];
+                    crystalVal = 0;
+                }
 
 
-         } //. Start Game Function 
+
+                // Records wins and losses
+                function winLoss() {
+                    if (yourScore === targetNumber) {
+                        wins++
+                        $("#win-ct").text(wins);
+                        
+                        startGame();
+                    } else if (yourScore > targetNumber) {
+                        losses++
+                        $("#loss-ct").text(losses);
+                        
+                        startGame();
+                    }  
+                } 
 
 
 
